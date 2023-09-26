@@ -18,11 +18,11 @@
 	
   <div class="mb-3 ">
     <label for="exampleInputEmail1" class="form-label">User Name</label>
-    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username">
+    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placehoder="enter your username">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="enter password">
   </div>
  
   <button type="submit" class="btn btn-primary">Login</button>
