@@ -18,7 +18,7 @@
 	
   <div class="mb-3 ">
     <label for="exampleInputEmail1" class="form-label">User Name</label>
-    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placehoder="enter your username">
+    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="enter your username">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
