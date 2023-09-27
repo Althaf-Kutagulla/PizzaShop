@@ -3,7 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%@page import="java.util.ArrayList,com.dataclasses.Pizzatypes,com.databaseoperations.OrdersDBOperations,com.dataclasses.OrderDao" %>
+<%@page import="java.util.ArrayList,com.dataclasses.Pizzatypes,com.databaseoperations.ProductsDao,com.dataclasses.Order" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 </head>
 <body>
 <%
-	//System.out.println(session.getAttribute("username"));
+//System.out.println(session.getAttribute("username"));
 	//System.out.println(session.getAttribute("password"));
 	//Caches
 	response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");
@@ -22,8 +22,8 @@
 		response.sendRedirect("login.jsp");
 	}
 	
-	OrdersDBOperations orderHistoryList = new OrdersDBOperations();
-	ArrayList<OrderDao> orderlist = orderHistoryList.getOrdersList();
+	ProductsDao orderHistoryList = new ProductsDao();
+	ArrayList<Order> orderlist = orderHistoryList.getOrdersList();
 	session.setAttribute("orderlist", orderlist);
 %>
 

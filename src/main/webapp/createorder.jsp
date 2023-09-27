@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"
-	import="com.databaseoperations.LoginDao,com.databaseoperations.Pizza,com.dataclasses.Pizzatypes,java.util.ArrayList,com.dataclasses.PizzaToppings"%>
+	import="com.databaseoperations.UserAuthenticationDao,com.databaseoperations.ProductsDao,com.dataclasses.Pizzatypes,java.util.ArrayList,com.dataclasses.PizzaToppings"%>
 
 
 <!DOCTYPE html>
@@ -22,14 +22,14 @@
 	if(session.getAttribute("username") == null){
 		response.sendRedirect("login.jsp");
 	}
-	Pizza pizzas = new Pizza();
-	ArrayList<Pizzatypes> list = pizzas.getPizzas();
+	ProductsDao products = new ProductsDao();
+	ArrayList<Pizzatypes> list = products.getPizzas();
 	session.setAttribute("pizzasList", list);
 	for (int i = 0; i < list.size(); i++) {
 		System.out.println(list.get(i).getPizzaName());
 	}
 
-	ArrayList<PizzaToppings> toppingsList = pizzas.getToppings();
+	ArrayList<PizzaToppings> toppingsList = products.getToppings();
 	session.setAttribute("pizzaToppingsList", toppingsList);
 	for (PizzaToppings p1 : toppingsList) {
 		System.out.println(p1.getTopping());

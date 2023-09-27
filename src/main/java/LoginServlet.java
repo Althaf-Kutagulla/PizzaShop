@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.databaseoperations.LoginDao;
+import com.databaseoperations.UserAuthenticationDao;
 
 @WebServlet("/Login")
 public class LoginServlet extends HttpServlet {
@@ -15,7 +15,7 @@ public class LoginServlet extends HttpServlet {
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		LoginDao logincheck = new LoginDao();
+		UserAuthenticationDao logincheck = new UserAuthenticationDao();
 		if(logincheck.checkUser(username, password)) {
 			
 			HttpSession session = request.getSession();

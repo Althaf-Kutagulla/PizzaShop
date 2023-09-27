@@ -19,7 +19,9 @@ public class ConfirmOrder extends HttpServlet {
 		int pizzaToppingId = Integer.parseInt(request.getParameter("topping"));
 		System.out.println(pizzaNameId+" "+pizzaToppingId);
 		
-		CreateOrderDB.createOrderOnSql(pizzaNameId, pizzaToppingId);
+		//CreateOrderDB.createOrderOnSql(pizzaNameId, pizzaToppingId);
+		ProductsDao products = new ProductsDao();
+		products.createOrder(pizzaNameId, pizzaToppingId);
 		
 		response.sendRedirect("home.jsp");
 		

@@ -1,4 +1,4 @@
-<%@ page import="com.databaseoperations.Pizza,java.util.ArrayList,com.dataclasses.Pizzatypes,com.dataclasses.PizzaToppings" %>
+<%@ page import="com.databaseoperations.ProductsDao,java.util.ArrayList,com.dataclasses.Pizzatypes,com.dataclasses.PizzaToppings" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -16,10 +16,10 @@
 		response.sendRedirect("login.jsp");
 	}
 	
-	Pizza p1 = new Pizza();
-	ArrayList<Pizzatypes> pizzaList =p1.getPizzas();
+	ProductsDao products = new ProductsDao();
+	ArrayList<Pizzatypes> pizzaList =products.getPizzas();
 	session.setAttribute("pizzaList", pizzaList);
-	ArrayList<PizzaToppings> toppingList = p1.getToppings();
+	ArrayList<PizzaToppings> toppingList = products.getToppings();
 	session.setAttribute("toppingList", toppingList);
 	%>
 	

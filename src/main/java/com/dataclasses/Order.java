@@ -1,6 +1,6 @@
 package com.dataclasses;
 
-public class OrderDao {
+public class Order {
 	int id;
 	String pizzaName;
 	String pizzaTopping;

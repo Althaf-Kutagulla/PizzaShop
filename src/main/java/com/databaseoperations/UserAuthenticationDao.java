@@ -6,7 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginDao {
+public class UserAuthenticationDao {
+	
+	public Connection connectDatabase(String url,String DBuser,String DBpassword) {
+		Connection connection=null;
+		try {
+			 connection = DriverManager.getConnection(url,DBuser,DBpassword);
+		}catch(SQLException ex) {
+			ex.printStackTrace();
+		}
+		
+		return connection;
+	}
 	
 	String url="jdbc:mysql://localhost:3306/pizza_shop";
 	String DBusername = "root";
